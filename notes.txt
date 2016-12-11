@@ -1,0 +1,2 @@
+- create services as fedora linux distro packages so that we can just `dnf install` them when setting up a new server or container.
+- make services fedora services so that we can just `systemctl start service` to start a service, for instance.

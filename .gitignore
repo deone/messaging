@@ -1,0 +1,3 @@
+*.pyc
+requestor/
+db.sqlite3
