@@ -25,7 +25,7 @@ SECRET_KEY = 'p+5gh8%j@5z_^+g(s=xeju#i%+vl(9lfvi4me$ouz2)jxdhc_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['messaging-deone.c9users.io']
 
 
 # Application definition
