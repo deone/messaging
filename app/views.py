@@ -27,4 +27,6 @@ def index(request):
     email.attach_file(file)
     email.send()
 
+    os.remove(file)
+
     return JsonResponse({'status': 'ok'})
