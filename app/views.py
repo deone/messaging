@@ -10,10 +10,10 @@ import os
 @ensure_csrf_cookie
 def index(request):
     data = dict(request.GET)
-    file = data['file'][0]
-    file_name = file.split('/')[-1]
+    _file = data['file'][0]
+    file_name = _file.split('/')[-1]
 
-    response = requests.get(file)
+    response = requests.get(_file)
     with open(file_name, 'w') as f:
         f.write(response.content)
 
@@ -24,10 +24,10 @@ def index(request):
         data['recipients'],
     )
 
-    file = os.path.join(settings.BASE_DIR, file_name)
-    email.attach_file(file)
+    _file = os.path.join(settings.BASE_DIR, file_name)
+    email.attach_file(_file)
     email.send()
 
-    os.remove(file)
+    os.remove(_file)
 
     return JsonResponse({'status': 'ok'})
