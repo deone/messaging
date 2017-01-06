@@ -14,7 +14,7 @@ def index(request):
     file_name = file.split('/')[-1]
 
     response = requests.get(file)
-    with open(file_name, 'a') as f:
+    with open(file_name, 'w') as f:
         f.write(response.content)
 
     email = EmailMessage(
@@ -23,6 +23,7 @@ def index(request):
         data['sender'][0],
         data['recipients'],
     )
+
     file = os.path.join(settings.BASE_DIR, file_name)
     email.attach_file(file)
     email.send()
