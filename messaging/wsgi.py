@@ -16,6 +16,6 @@ from django.core.wsgi import get_wsgi_application
 
 settings_file = "messaging.settings_" + env
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings_file")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_file)
 
 application = get_wsgi_application()
