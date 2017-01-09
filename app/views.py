@@ -12,7 +12,7 @@ def index(request):
     data = dict(request.GET)
     _file = data['file'][0]
 
-    attachment = os.path.join(settings.STATICFILES_DIRS[0], _file.split('/')[-1])
+    attachment = os.path.join(settings.MEDIA_ROOT, _file.split('/')[-1])
 
     response = requests.get(_file)
     with open(attachment, 'w') as f:
